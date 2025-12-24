@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code </title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <!-- <div class="parent">
+        <div class="day">Mon</div>
+        <div class="day">Tueesday</div>
+        <div class="day">Wedday</div>
+        <div class="day">saturaday</div>
+    </div> -->
+    <ul class="language">
+        <li>JS</li>
+        <li>Python</li>
+    </ul>
+    <div class="language">Anish</div>
+    <div class="language">Sood</div>
+    <button>eventlistener</button>
+    
+</body>
+<script>
+    // const parent3=document.querySelector(".parent");
+    // parent3.children[1].style.color="orange"
+    // console.log(parent3.firstElementChild)
+    // const allchild=document.querySelectorAll(".day")
+    // const myarr=Array.from(allchild)
+    // console.log(myarr)
+    // const oneday=document.querySelector(".day")
+    // console.log(oneday.parentElement)
+    // console.log(oneday.nextElementSibling)
+    // console.log("Nodes: ", parent3.childNodes);
+    // let div = document.createElement('div')
+    // console.log(div)
+    // div.className='main'
+    // div.id='myid'
+    // div.setAttribute('id',"myid2")
+    // div.style.color= ""
+    // div.textContent="new ele"
+    // document.body.appendChild(div)
+
+    function addlist(lang){
+        const li=document.createElement('li');
+        li.textContent = `${lang}`
+        document.querySelector(".language").appendChild(li)
+    }
+    addlist("anish")
+    function addoptilist(lang){
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(lang));
+        document.querySelector(".language").appendChild(li);
+    }
+    addoptilist("sood")
+
+    const secondlang = document.querySelector('li:nth-child(2)')
+    console.log(secondlang.innerHTML);
+    const newli=document.createElement('li')
+    newli.textContent="Mojo"
+    secondlang.replaceWith(newli)
+
+    const lastlang=document.querySelector('li:last-child')
+    // console.log(lastlang.innerHTML)
+    document.querySelector('li:nth-child(2)').remove();
+    document.querySelector('button').addEventListener('click',async (e)=>{
+        try{
+            const response = await fetch('https://api.github.com/users/hadley/org')
+            const data=await response.json()
+        }
+        catch(error){
+            console.log(`error:`, error);
+        }
+    })
+</script>
+</html>
